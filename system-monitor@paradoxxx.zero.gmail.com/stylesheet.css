@@ -1,10 +1,11 @@
 .sm-title {
+    color: #999;
     font-size: 16px;
     padding: 0px 25px 0px 0px;
 }
 
 .sm-label {
-    color: #bbb;
+    color: #999;
     font-size: 12px;
     padding-top: 5px;
 }
@@ -16,6 +17,7 @@
 }
 
 .sm-value {
+    color: #ccc;
     text-align: right;
     min-width: 40px;
     padding: 2px 5px 0 0;

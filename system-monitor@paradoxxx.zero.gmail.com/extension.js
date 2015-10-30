@@ -128,7 +128,7 @@ function build_menu_info() {
         // Add item name to table
         menu_info_box_table_layout.pack(
             new St.Label({
-                text: elts[elt].item_name, 
+                text: elts[elt].item_name,
                 style_class: Style.get("sm-title")}), 0, row_index);
 
         // Add item data to table
@@ -441,7 +441,7 @@ const smMountsMonitor = new Lang.Class({
             let info = file.query_filesystem_info(Gio.FILE_ATTRIBUTE_FILESYSTEM_TYPE, null);
             let result = info.get_attribute_string(Gio.FILE_ATTRIBUTE_FILESYSTEM_TYPE);
             let net_fs = ['nfs', 'smbfs', 'cifs', 'ftp', 'sshfs', 'sftp', 'mtp', 'mtpfs'];
-            return !file.is_native() || net_fs.indexOf(result) > -1; 
+            return !file.is_native() || net_fs.indexOf(result) > -1;
         } catch(e) {
             return false;
         }
@@ -526,7 +526,7 @@ const Bar = new Lang.Class({
         for (let mount in this.mounts) {
             GTop.glibtop_get_fsusage(this.gtop, this.mounts[mount]);
             let perc_full = (this.gtop.blocks - this.gtop.bfree)/this.gtop.blocks;
-            Clutter.cairo_set_source_color(cr, this.colors[mount % this.colors.length]);
+            Clutter.cairo_set_source_color(cr, this.colors[this.colors.length - 2]);
             cr.moveTo(2*x0,y0)
             cr.relLineTo(perc_full*0.6*width, 0);
             cr.moveTo(0, y0+this.thickness/3);
